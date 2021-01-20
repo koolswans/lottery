@@ -1,6 +1,8 @@
+Code has been updated for Python 3.9
+
 How to run the application:
 
-    * create a Python 3 virtual environment and activate it.
+    * Install Python 3.9 and create a Python 39 virtual environment and activate it. (Path variable in Windows)
 
     * install the requirements of the project:
       
@@ -14,7 +16,12 @@ How to run the application:
       generating tickets for them, etc.)
 
           python manage.py createsuperuser
+          Specify Username and Password (Save at safe place.)
 
     * for a test run, use the following command:
 
           python manage.py runserver
+		  
+
+This version is inherited from below URL
+https://github.com/jerojasro/lottery.git
