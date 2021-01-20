@@ -25,7 +25,7 @@ SECRET_KEY = 'gt%aw8*b4c%15#&wno&u1dfpq4z28xlm2@lz1sm%ksaco@eqv6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,13 +41,13 @@ INSTALLED_APPS = [
     'crispy_forms',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -114,6 +114,6 @@ LOGIN_URL = "/accounts/register"
 LOGIN_REDIRECT_URL = "/"
 
 LOTTERY_TICKET_NUMBERS = 6
-LOTTERY_NUMBER_RANGE = range(1, 43)  # numbers from 1 to 42
+LOTTERY_NUMBER_RANGE = range(1, 50)  # numbers from 1 to 42
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'

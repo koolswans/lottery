@@ -54,8 +54,8 @@ class LotteryTicket(models.Model):
     A person can only have one ticket per lottery.
     """
 
-    lottery = models.ForeignKey("lottery.Lottery")
-    player = models.ForeignKey("auth.User")
+    lottery = models.ForeignKey("lottery.Lottery", on_delete=models.CASCADE)
+    player = models.ForeignKey("auth.User", on_delete=models.CASCADE)
     ticket = models.CharField(
         max_length=200,
         help_text="Serialization of the ticket/selection of numbers made by the player",

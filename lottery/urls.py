@@ -14,6 +14,9 @@ Including another URLconf
     2. Import the include() function: from django.conf.urls import url, include
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+from django.urls import path
+from django.contrib.sitemaps.views import sitemap
+from django.contrib.auth import views as auth_views
 from django.conf.urls import url, include
 from django.contrib import admin
 import lottery.views
@@ -25,4 +28,6 @@ urlpatterns = [
     url(r'^lottery/(\d+)/play$', lottery.views.PlayLottery.as_view(), name="play_lottery"),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^admin/', admin.site.urls),
+    path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
 ]

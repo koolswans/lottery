@@ -39,9 +39,9 @@
           <ul class="nav navbar-nav navbar-right">
               {% if request.user.is_authenticated %}
                 <li><a href="#">{{request.user.username}}</a></li>
-                <li><a href="{% url 'django.contrib.auth.views.logout' %}?next={% url 'main_page' %}" class="btn btn-danger">Logout</a></li>
+                <li><a href="{% url 'logout' %}?next={% url 'main_page' %}" class="btn btn-danger">Logout</a></li>
               {% else %}
-                <li><a href="{% url 'django.contrib.auth.views.login' %}" class="btn btn-primary">Login</a></li>
+                <li><a href="{% url 'login' %}" class="btn btn-primary">Login</a></li>
               {% endif %}
           </ul>
         </div><!-- /.navbar-collapse -->

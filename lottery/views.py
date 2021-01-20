@@ -1,7 +1,11 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
+'''
 from django.core.urlresolvers import reverse_lazy
 from django.core.urlresolvers import reverse
+'''
+from django.urls import reverse_lazy
+from django.urls import reverse
 from django.http import HttpResponseForbidden
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
@@ -17,7 +21,7 @@ from .utils import serialize_ticket
 
 def main_page(request):
     context = {"player_tickets": [], "lotteries": Lottery.open_lotteries.all()}
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         player_tickets = request.user.lotteryticket_set.select_related().all()
         context["player_tickets"] = player_tickets
         context["lotteries"] = Lottery.open_lotteries.exclude(
